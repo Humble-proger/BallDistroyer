@@ -7,12 +7,12 @@ public class Ball : MonoBehaviour {
 
     private void OnEnable()
     {
-        _collidate.Ñollided += Collidate;
+        _collidate.Collided += Collidate;
     }
 
     private void OnDisable()
     {
-        _collidate.Ñollided -= Collidate;
+        _collidate.Collided -= Collidate;
     }
 
     private void Collidate(IObstacle obstacle)

@@ -16,14 +16,14 @@ public class BallMover : MonoBehaviour
         _startPosition = transform.position;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical);
+        Vector3 direction = new(horizontal, 0f, vertical);
         
-        if (_rigidbody.angularVelocity.magnitude > _maxSpeed) {
-            _rigidbody.angularVelocity = _rigidbody.angularVelocity.normalized * _maxSpeed;
+        if (_rigidbody.linearVelocity.magnitude > _maxSpeed) {
+            _rigidbody.linearVelocity = _rigidbody.linearVelocity.normalized * _maxSpeed;
         }
         
         _rigidbody.AddForce(_speed * direction);
@@ -32,5 +32,6 @@ public class BallMover : MonoBehaviour
     public void Reset()
     {
         transform.position = _startPosition;
+        _rigidbody.angularVelocity = Vector3.zero;
     }
 }

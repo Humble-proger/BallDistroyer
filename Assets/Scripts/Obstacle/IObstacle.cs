@@ -1,4 +1,4 @@
 public interface IObstacle 
 {
-    public void Distroy();
+    public void Destroy();
 }
