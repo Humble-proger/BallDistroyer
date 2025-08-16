@@ -18,6 +18,6 @@ public class Ball : MonoBehaviour {
     private void Collidate(IObstacle obstacle)
     {
         _scoreCounter.AddScore();
-        obstacle.Distroy();
+        obstacle.Destroy();
     }
 }
