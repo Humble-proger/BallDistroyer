@@ -8,9 +8,9 @@ public class ScoreCounter : MonoBehaviour
     public int Score => _score;
     public event Action<int> ScoreChanged;
 
-    public void AddScore() 
+    public void AddScore(int value) 
     { 
-        _score++;
+        _score += value;
         ScoreChanged?.Invoke(Score);
     }
 

@@ -17,7 +17,10 @@ public class Ball : MonoBehaviour {
 
     private void Collidate(IObstacle obstacle)
     {
-        _scoreCounter.AddScore();
+        if (obstacle is CoinObstacle)
+            _scoreCounter.AddScore(10);
+        else
+            _scoreCounter.AddScore(1);
         obstacle.Destroy();
     }
 }
